@@ -24,7 +24,7 @@ EM.run do
   $stderr.puts "Starting Nanite mapper..."
   Nanite.start_mapper(opts)
   
-  EventMachine::add_periodic_timer 1 do
+  EventMachine::add_periodic_timer 60 do
     Retcon::BackupServers.update_disk_space
   end
 end
