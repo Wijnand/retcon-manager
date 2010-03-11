@@ -27,4 +27,12 @@ EM.run do
   EventMachine::add_periodic_timer 60 do
     Retcon::BackupServers.update_disk_space
   end
+  
+  EventMachine::add_periodic_timer 60 do
+    Retcon::BackupServers.queue_backups
+  end
+  
+  EventMachine::add_periodic_timer 60 do
+    Retcon::BackupServers.run_queued
+  end
 end
