@@ -4,7 +4,7 @@ RAILS_ROOT = File.join(File.dirname(__FILE__), '..','..','..','retcon-web')
 
 $: << RAILS_ROOT
 
-ENV["RAILS_ENV"] ||= "development"
+ENV["RAILS_ENV"] = DAEMON_ENV
 ENV["NO_NM"] = "1"
 
 require RAILS_ROOT + "/config/environment"

@@ -13,7 +13,7 @@ DaemonKit::Application.running! do |config|
 end
 
 def load_mapper_opts
-  YAML::load(ERB.new(IO.read(RAILS_ROOT+"/config/nanite/mapper.yml")).result)[ENV["RAILS_ENV"] || "development"]
+  YAML::load(ERB.new(IO.read(RAILS_ROOT+"/config/nanite/mapper.yml")).result)[DAEMON_ENV || "development"]
 end
 
 # Sample loop to show process
